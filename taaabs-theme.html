@@ -1,0 +1,306 @@
+<link rel="import" href="../../bower_components/paper-styles/paper-styles.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+<!-- taaabs-dark-theme.html -->
+<dom-module id="taaabs-theme">
+  <template>
+    <style>
+      :host {
+        @apply(--paper-font-common-base);
+        font-size: 14px;
+        margin: 0;
+        padding: 24px;
+        color: 'red';
+        box-sizing:border-box;
+        background-color: var(--paper-grey-50);
+      }
+
+      /* MARK: div */
+
+      :host div{
+        box-sizing:border-box;
+      }
+
+      :host .clickable {
+        cursor: pointer;
+      }
+
+      :host .fade {
+        opacity: 0.37;
+        -webkit-transition: opacity 0.25s ease-in-out;
+        -moz-transition: opacity 0.25s ease-in-out;
+        -o-transition: opacity 0.25s ease-in-out;
+        -ms-transition: opacity 0.25s ease-in-out;
+      }
+
+      :host .disable {
+        pointer-events: none;
+      }
+
+      :host tr.clickable, td.clickable, th.clickable{
+        -webkit-transition: background-color 0.25s ease-in-out;
+        transition: background-color 0.25s ease-in-out;
+      }
+
+      :host tr.clickable:hover, td.clickable:hover, th.clickable:hover{
+        background-color: var(--paper-grey-200);
+      }
+
+      :host .no-select {
+        cursor: default;
+        -webkit-touch-callout: none; /* iOS Safari */
+          -webkit-user-select: none; /* Safari */
+           -khtml-user-select: none; /* Konqueror HTML */
+             -moz-user-select: none; /* Firefox */
+              -ms-user-select: none; /* Internet Explorer/Edge */
+                  user-select: none; /* Non-prefixed version, currently
+                                        supported by Chrome and Opera */
+      }
+
+
+      /* MARK: paper-dropdown-menu */
+
+      paper-dropdown-menu {
+        --paper-input-container-label: {
+          font-size: 14px;
+        };
+      }
+
+      paper-item {
+        --paper-item: {
+          font-size: 14px;
+          -webkit-transition: background-color 0.25s ease-in-out;
+          transition: background-color 0.25s ease-in-out;
+          cursor: pointer;
+        };
+      }
+
+      /* MARK: paper-input */
+
+      paper-input {
+        --paper-input-container-input: {
+          font-size: 14px;
+        };
+      }
+
+      /* MARK: Sizes */
+
+      :host .tiny {
+        font-size: 10px;
+      }
+
+      :host iron-icon.tiny {
+        width: 12px;
+        height: 12px;
+      }
+
+      :host .small {
+        font-size: 12px;
+      }
+
+      :host iron-icon.small {
+        width: 14px;
+        height: 14px;
+      }
+
+      :host .fit {
+        width: 100%;
+        height: 100%;
+      }
+
+      :host .fit-width {
+        width: 100%;
+      }
+
+      :host .fit-height {
+        height: 100%;
+      }
+
+      /* MARK: tables */
+
+      :host table{
+        border-collapse: collapse;
+      }
+
+      :host th {
+        border-bottom: solid 1px var(--paper-grey-500);
+        text-align: left;
+      }
+
+      :host th, td{
+        padding-right: 5px;
+        padding-bottom: 5px;
+      }
+
+      :host tr:nth-child(2n){
+        background-color: var(--paper-grey-100);
+      }
+
+      /* MARK: colors */
+
+      .hoverable {
+        -webkit-transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+        transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+      }
+
+      .fgWhite{
+        color: var(--paper-grey-50);
+      }
+
+      .fgWhiteH{
+        color: var(--paper-white);
+      }
+
+      .fgGrey{
+        color: var(--paper-grey-500);
+      }
+
+      .bgLightGrey100{
+        background-color: var(--paper-grey-100);
+      }
+
+      .bgLightGrey100H:hover{
+        background-color: var(--paper-grey-200);
+      }
+
+      .fgSuccess{
+        color: var(--paper-green-500);
+      }
+
+      .bgSuccess{
+        background-color: var(--paper-green-500);
+      }
+
+      .bgSuccessH:hover{
+        background-color: var(--paper-green-400);
+      }
+
+      .fgSuccessH:hover{
+        color: var(--paper-green-400);
+      }
+
+      .fgWarning{
+        color: var(--paper-orange-500);
+      }
+
+      .bgWarning{
+        background-color: var(--paper-orange-500);
+      }
+
+      .bgWarningH:hover{
+        background-color: var(--paper-orange-400);
+      }
+
+      .fgWarningH:hover{
+        color: var(--paper-orange-400);
+      }
+
+      .fgError{
+        color: var(--paper-red-500);
+      }
+
+      .bgError{
+        background-color: var(--paper-red-500);
+      }
+
+      .bgErrorH:hover{
+        background-color: var(--paper-red-400);
+      }
+
+      .fgErrorH:hover{
+        color: var(--paper-red-400);
+      }
+
+      .fgLog{
+        color: var(--paper-blue-500);
+      }
+
+      .fgLogH:hover{
+        color: var(--paper-blue-400);
+      }
+
+      .bgLog{
+        background-color: var(--paper-blue-500);
+      }
+
+      .bgLogH:hover{
+        background-color: var(--paper-blue-400);
+      }
+
+
+
+      /* MARK: iron-flex-layout classes */
+
+      :host .flexchild {
+        @apply(--layout-flex);
+      }
+
+      :host .flex-horizontal {
+        @apply(--layout-horizontal);
+      }
+
+      .flex-vertical {
+        @apply(--layout-vertical);
+      }
+
+      .flex-center-align {
+        @apply(--layout-center);
+      }
+
+      .flex-start-align {
+        @apply(--layout-start);
+      }
+
+      .flex-end-align {
+        @apply(--layout-end);
+      }
+
+      .flex-start-justified {
+        @apply(--layout-start-justified);
+      }
+
+      .flex-center-justified {
+        @apply(--layout-center-justified);
+      }
+
+      .flex-end-justified {
+        @apply(--layout-end-justified);
+      }
+
+      .flex-equal-justified {
+        @apply(--layout-justified);
+      }
+
+      .flex-equal-around-justified {
+        @apply(--layout-around-justified);
+      }
+
+      .flex-reversed {
+        @apply(--layout-horizontal-reverse);
+      }
+
+      .flex-wrap {
+        @apply(--layout-wrap);
+      }
+
+      /* MARK: swag-scroll */
+
+      :host .swag-scroll{
+        overflow: auto;
+      }
+
+      :host .swag-scroll::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+
+      :host .swag-scroll::-webkit-scrollbar-track {
+        background: #ddd;
+      }
+
+      :host .swag-scroll::-webkit-scrollbar-thumb {
+        background: #666;
+      }
+    </style>
+  </template>
+</dom-module>
