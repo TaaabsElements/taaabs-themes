@@ -1,5 +1,5 @@
-<link rel="import" href="../../bower_components/paper-styles/paper-styles.html">
-<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../paper-styles/paper-styles.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout-classes.html">
 
 <!-- taaabs-dark-theme.html -->
 <dom-module id="taaabs-theme">
@@ -15,14 +15,21 @@
         background-color: var(--paper-grey-50);
       }
 
-      /* MARK: div */
+      /**** div ****/
 
       :host div{
         box-sizing:border-box;
       }
 
-      :host .clickable {
-        cursor: pointer;
+      :host .no-select {
+        cursor: default;
+        -webkit-touch-callout: none; /* iOS Safari */
+          -webkit-user-select: none; /* Safari */
+           -khtml-user-select: none; /* Konqueror HTML */
+             -moz-user-select: none; /* Firefox */
+              -ms-user-select: none; /* Internet Explorer/Edge */
+                  user-select: none; /* Non-prefixed version, currently
+                                        supported by Chrome and Opera */
       }
 
       :host .fade {
@@ -42,21 +49,13 @@
         transition: background-color 0.25s ease-in-out;
       }
 
+      :host .clickable {
+        cursor: pointer;
+      }
+
       :host tr.clickable:hover, td.clickable:hover, th.clickable:hover{
         background-color: var(--paper-grey-200);
       }
-
-      :host .no-select {
-        cursor: default;
-        -webkit-touch-callout: none; /* iOS Safari */
-          -webkit-user-select: none; /* Safari */
-           -khtml-user-select: none; /* Konqueror HTML */
-             -moz-user-select: none; /* Firefox */
-              -ms-user-select: none; /* Internet Explorer/Edge */
-                  user-select: none; /* Non-prefixed version, currently
-                                        supported by Chrome and Opera */
-      }
-
 
       /* MARK: paper-dropdown-menu */
 
@@ -153,6 +152,10 @@
 
       .fgGrey{
         color: var(--paper-grey-500);
+      }
+
+      .fgGreyH{
+        color: var(--paper-grey-400);
       }
 
       .bgLightGrey100{
