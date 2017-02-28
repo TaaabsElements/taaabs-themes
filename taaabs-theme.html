@@ -82,6 +82,12 @@
         };
       }
 
+      /* MARK: paper-dialog */
+      paper-dialog {
+        background-color: var(--paper-grey-50);
+      }
+
+
       /* MARK: Sizes */
 
       :host .tiny {
@@ -89,8 +95,8 @@
       }
 
       :host iron-icon.tiny {
-        width: 12px;
-        height: 12px;
+        width: 14px;
+        height: 14px;
       }
 
       :host .small {
@@ -98,8 +104,8 @@
       }
 
       :host iron-icon.small {
-        width: 14px;
-        height: 14px;
+        width: 16px;
+        height: 16px;
       }
 
       :host .fit {
@@ -119,6 +125,7 @@
 
       :host table{
         border-collapse: collapse;
+        font-size: 14px;
       }
 
       :host th {
@@ -143,18 +150,18 @@
       }
 
       .fgWhite{
-        color: var(--paper-grey-50);
+        color: var(--paper-grey-100);
       }
 
-      .fgWhiteH{
-        color: var(--paper-white);
+      .fgWhiteH:hover{
+        color: #ffffff;
       }
 
       .fgGrey{
         color: var(--paper-grey-500);
       }
 
-      .fgGreyH{
+      .fgGreyH:hover{
         color: var(--paper-grey-400);
       }
 
@@ -164,6 +171,14 @@
 
       .bgLightGrey100H:hover{
         background-color: var(--paper-grey-200);
+      }
+
+      .bgDarkBlue{
+        background-color: var(--paper-blue-grey-900);
+      }
+
+      .bgDarkBlueH{
+        background-color: var(--paper-blue-grey-800);
       }
 
       .fgSuccess{
