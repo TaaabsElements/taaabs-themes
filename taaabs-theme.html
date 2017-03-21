@@ -13,6 +13,7 @@
         color: 'red';
         box-sizing:border-box;
         background-color: var(--paper-grey-50);
+        position: relative;
       }
 
       /**** div ****/
@@ -257,48 +258,52 @@
         @apply(--layout-horizontal);
       }
 
-      .flex-vertical {
+      :host .flex-vertical {
         @apply(--layout-vertical);
       }
 
-      .flex-center-align {
+      :host .flex-center-align {
         @apply(--layout-center);
       }
 
-      .flex-start-align {
+      :host .flex-start-align {
         @apply(--layout-start);
       }
 
-      .flex-end-align {
+      :host .flex-end-align {
         @apply(--layout-end);
       }
 
-      .flex-start-justified {
+      :host .flex-start-justified {
         @apply(--layout-start-justified);
       }
 
-      .flex-center-justified {
+      :host .flex-center-justified {
         @apply(--layout-center-justified);
       }
 
-      .flex-end-justified {
+      :host .flex-end-justified {
         @apply(--layout-end-justified);
       }
 
-      .flex-equal-justified {
+      :host .flex-equal-justified {
         @apply(--layout-justified);
       }
 
-      .flex-equal-around-justified {
+      :host .flex-equal-around-justified {
         @apply(--layout-around-justified);
       }
 
-      .flex-reversed {
+      :host .flex-reversed {
         @apply(--layout-horizontal-reverse);
       }
 
-      .flex-wrap {
+      :host .flex-wrap {
         @apply(--layout-wrap);
+      }
+
+      :host .relative {
+        @apply(--layout-relative);
       }
 
       /* MARK: swag-scroll */
